@@ -1,0 +1,284 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,100&display=swap');
+
+body{
+    margin /*Margem*/                                           : 0; 
+    padding /*Preenchimento de bordas*/                         : 0%; 
+    font-family /*Fonte que será utilizada*/                    :Arial, Helvetica, sans-serif; /*DEFINE FONTE QUE SERÁ UTILIZADA*/
+    color /*Cor da fonte*/:                                     rgb(37, 39, 65); 
+}
+
+/* ===================================  HEADER */
+
+.header-container {
+    height /*(altura)*/:                                        100vh;
+    background-color  /*cor da imagem de fundo*/:               rgb(209, 238, 240);
+    background-image /*imgame de fundo*/:                       url(./img/backgroud.png);
+    background-repeat /*(fundo de repetição)*/:                 no-repeat; /*(sem-repetição)*/
+    background-position /*(posição de fundo)*/:                 right; /*Posição Certa*/
+    display /*mostrar*/ :                                       flex; /*flexível*/
+    flex-direction /*(direção flexível)*/:                      column; /*coluna*/ 
+    justify-content /*(justificar-conteúdo)*/:                  center; /*centro*/
+    align-items /*(itens de alinhamento)*/:                     flex-start; /*inicio-flexível*/
+    box-sizing /*(tamanho da caixa)*/:                          border-box; /*caixa de fronteira*/
+    padding /*(preenchimento)*/:                                0 112px;
+    position /*(posição)*/:                                     relative /*relativo*/
+    
+   
+}
+
+h1{
+    font-size /*Tamanho da Fonte*/:                             50px; 
+    text-transform /*transformação de texto*/:                  uppercase; /*Maiúsculas*/
+    letter-spacing /*espaçamento entre letras*/:                4px;
+}
+
+h2{
+    text-transform /*transformação de texto*/:                  uppercase; /*Maiúsculas*/
+    letter-spacing /*espaçamento entre letras*/:                4px;
+}
+
+.social-media{
+    margin-top /*margem superior*/:                             1rem; /*1 rem = 16px*/
+    display /*mostrar*/ :                                       flex; /*flexível*/
+}
+
+.social-media a{
+    text-decoration /*texto decorado*/:                         none; /*nenhum*/
+    color /*cor da fonte*/:                                     rgb(12, 12, 12);
+    padding /*(preenchimento)*/:                                1rem 4rem;
+    border /*borda*/:                                           1px solid rgb(20, 20, 20); /*solida*/
+    display /*mostrar*/ :                                       flex; /*flexível*/
+    align-items/*(itens de alinhamento)*/:                      center; /*centro*/
+    justify-content /*(justificar-conteúdo)*/:                  center; /*centro*/
+    transition/*transação*/:                                    .5s ease-in-out; /*facilidade de entrada*/
+}
+
+a:hover{
+    background-color /*cor de fundo*/:                          #1EB5FF;
+}
+
+/* ===================================  MENU HAMBURGUER */
+
+.checkbox-container{
+    display /*mostrar*/ :                                       flex; /*flexível*/
+    justify-content /*(justificar-conteúdo)*/:                  center; /*centro*/
+    align-items /*texto alinhado*/:                             center; /*centro*/
+}
+
+.checkbox{
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+    display /*mostrar*/ :                                       flex; /*flexível*/
+    z-index: 9999;
+    transition: 400ms ease-in-out 0s;
+}
+
+.checkbox .trace{
+    width/*largura*/:                                           50px;
+    height/*altura*/:                                           2px;
+    background-color/*cor de fundo*/:                           black;
+    position/*posição*/:                                        absolute; /*absoluto*/
+    border-radius /*raio de borda */:                           4px;
+    transition /*transação*/:                                   0.5s ease-in-out; /*facilidade de entrada*/
+}
+
+.checkbox .trace:nth-child(1){
+    top /*principal/topo*/:                                     26px;
+    transform/*transforação*/:                                  rotate(0); /*girar*/
+} 
+
+.checkbox .trace:nth-child(2){
+    top /*principal/topo*/:                                     46px;
+    transform/*transforação*/:                                  rotate(0); /*girar*/
+} 
+
+.checkbox .trace:nth-child(3){
+    top /*principal/topo*/:                                     66px;
+    transform/*transforação*/:                                  rotate(0); /*girar*/
+} 
+
+#toggle{
+    display /*mostrar*/:                                        none; /*nenhum*/
+}
+
+/* MENU */
+
+.menu{
+    position/*posição*/:                                        absolute; /*absoluto*/
+    top /*principal/topo*/:                                     28px;
+    right /*certo*/:                                            30px;
+    background-color /*cor de fundo*/:                          transparent; /*transparente*/
+    width/*largura*/:                                           10px;
+    height/*altura*/:                                           4px;
+    border-radius /*raio de borda */:                           50%;
+    box-shadow /*sombra da caixa*/:                             0px 0px 0px 0px white; /*horizontal, vertical, blur, distância do espelhamento, cor*/
+    z-index /*índice z*/:                                       -1;
+    transition /*transação*/:                                   400ms ease-in-out 0s;/*facilidade de entrada*/
+}
+
+.menu-items {
+    position /*posição*/:                                       fixed; /*fixo*/
+    top /*principal/topo*/:                                     0;
+    left /*esquerda*/:                                          0;
+    width/*largura*/:                                           100%;
+    height/*altura*/:                                           100vh;
+    display /*mostrar*/ :                                       flex; /*flexível*/
+    justify-content /*(justificar-conteúdo)*/:                  center; /*centro*/
+    align-items/*texto alinhado*/:                              center; /*centro*/
+    z-index /*indice z*/:                                       2;
+    opacity /*opacidade*/:                                      0;
+    visibility /*visibilidade*/:                                hidden; /*escondida*/
+    transition /*transação*/:                                   400ms ease-in-out 0s; /*facilidade de entrada*/
+}
+
+.menu-items ul{
+    list-style-type /*tipo de estilo de lista*/:                none; /*nenhum*/
+}
+
+.menu-items ul li a {
+    margin /*margem*/:                                          10px 0;
+    color /*cor*/:                                              rgb(29, 28, 28);
+    text-decoration /*texto decorado*/:                         none; /*nenhum*/
+    text-transform /*transformação de texto*/:                  uppercase; /*maiúsculas*/
+    letter-spacing /*espaçamento entre letras*/:                4px;
+    font-size /*tamanho da fonte*/:                             40px;
+}
+
+
+/* ==============================================   ANIMAÇÃO DO MENU */
+ 
+#toggle:checked + .checkbox .trace:nth-child(1){
+    transform /*transformação*/:                                rotate(45deg); /*giro*/
+    top /*principal / topo*/:                                   47px;
+}
+
+#toggle:checked + .checkbox .trace:nth-child(2){
+    transform /*transformação*/:                                translate(-100px); /*traduzir*/
+    width /*largura*/:                                          30px;
+    visibility /*visibilidade*/:                                hidden; /*escondida*/
+    opacity /*opacidade*/:                                      0;
+}
+
+#toggle:checked + .checkbox .trace:nth-child(3){
+    transform /*transformação*/:                                rotate(-45deg); /*girar*/
+    top /*principal / topo*/:                                   48px;
+}
+
+#toggle:checked + .checkbox {
+    background-color /*cor de fundo*/:                          white;
+}
+
+#toggle:checked ~ .menu{
+    box-shadow /*sombra de caixa*/:                             0px 0px 0px 100vmax  rgb(255, 255, 255);
+    z-index /*índice z*/:                                       1;
+}
+
+#toggle:checked ~ .menu{
+    visibility /*visibilidade*/:                                visible; /*visível*/
+    opacity /*opacidade*/:                                      1;
+}
+
+#toggle:checked ~ .menu-items{
+    visibility /*visibilidade*/:                                visible; /*visível*/
+    opacity /*opacidade*/:                                      1;
+}
+
+/* CARDS */
+
+.container{
+    height/*altura*/:                                           auto; /*automático*/
+    width /*largura*/:                                          100%;
+    display /*mostrar*/ :                                       flex; /*flexível*/
+    flex-direction /*direção flexível*/:                        column; /*coluna*/
+    justify-content /*justifique o conteúdo*/:                  space-evenly; /*espaço uniformemente*/
+    margin /*margem*/:                                          3rem 0;
+}
+
+.card-container{
+    display /*mostrar*/ :                                       flex; /*flexível*/
+    justify-content /*justifique o conteúdo*/:                  space-evenly; /*espaço uniformemente*/
+    align-items/*texto alinhado*/:                              center; /*centro*/
+    width /*largura*/:                                          90%;
+}
+
+.card{
+    width /*largura*/:                                          300px;
+    height /*altura*/:                                          300px;
+    border-radius /*raio de bordar*/:                           100%;
+    margin /*margem*/:                                          3rem 0 0 0;
+    display /*mostrar*/ :                                       flex; /*flexível*/
+    align-items/*texto alinhado*/:                              center; /*centro*/
+    justify-content /*(justificar-conteúdo)*/:                  center; /*centro*/
+    background-color /*cor de fundo*/:                          rgb(209, 238, 240);
+    background-image /*imagem de fundo*/:                       url(./img/backgroud.png);
+    background-position /*posição do fundo*/:                   center; /*centro*/
+    background-size /*tamanho do fundo*/:                       cover; /*cobrir*/
+    background-repeat /*repetição de fundo*/:                   no-repeat; /*sem-repetição*/
+    filter /*filtro*/:                                          grayscale(0.5); /*escala de cinza*/
+    color /*cor*/:                                              black;
+    cursor /*cursor do mouse*/:                                 pointer; /*ponteiro*/
+    transition /*transação*/:                                   0.5s ease-in-out; /*facilidade de entrada*/
+}
+
+.card-text{
+    width/*largura*/:                                           40%;
+    letter-spacing /*espaçamento entre letras*/:                1px;
+    color /*cor*/:                                              #0e425c;
+}
+
+.card-wrapper{
+    text-align /*alinhamento de texto*/:                        center; /*centro*/
+    display /*mostrar*/ :                                       flex; /*flexível*/
+    flex-direction /*direção flexícivel*/:                      column; /*coluna*/
+    justify-content /*(justificar-conteúdo)*/:                  center; /*centro*/
+    align-items/*texto alinhado*/:                              center; /*centro*/
+    position /*posição*/:                                       relative; /*relativa*/
+}
+
+.card-wrapper::before{
+    content /*contente*/:                                       "";
+    position /*posição*/:                                       absolute; /*absoluta*/
+    height /*altura*/:                                          100px;
+    width/*largura*/:                                           100px;
+    border-radius: /*raio de borda*/                            50%;
+    border /*borda*/:                                           1px solid white; /*sólida*/
+    opacity /*opacidade*/:                                      0;
+    transition /*transação*/:                                   0.5s ease-in-out; /*facilidade de entrada*/
+}
+
+.card-wrapper h2{
+    font-size /*tamanho da letra*/:                             40px;
+    text-transform /*transformação de texto*/:                  uppercase; /*maiúsculas*/
+    letter-spacing /*espaçamento entre letras*/:                4px;
+    margin /*margem*/:                                          0;
+    transition /*transition*/:                                  0.5s ease-in-out;
+}
+
+.card-wrapper p {
+    font-size /*tamanho da fonte*/:                             0;
+    visibility /*visibilidade*/:                                visible; /*visível*/
+    opacity /*opacidade*/:                                      0;
+    font-weight /*peso da fonte*/:                              bold; /*negrito*/
+    text-transform /*transformação de texto*/:                  uppercase; /*maiúsculas*/
+    transition /*transação*/:                                   0.5s ease-in-out; /*facilidade de entrada*/
+}
+
+.card:hover{
+    filter /*filtro*/:                                          unset; /*usar*/
+}
+
+.card:hover > .card-wrapper::before{
+    height /*altura*/:                                          200px;
+    width/*largura*/:                                           200px;
+    opacity /*opacidade*/:                                      1;
+}
+
+.card:hover > .card-wrapper p {
+    opacity /*opacidade*/:                                      1;
+    visibility /*visibilidade*/:                                visible; /*visível*/
+    font-size /*tamanho da fonte*/:                             14px;
+}
